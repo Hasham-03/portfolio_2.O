@@ -3,36 +3,50 @@ import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import { MdArrowBack, MdArrowForward } from "react-icons/md";
 
-const projects = [
+type Project = {
+  title: string;
+  category: string;
+  tools: string;
+  image: string;
+  github?: string;
+  demo?: string;
+};
+
+const projects: Project[] = [
   {
-    title: "Solid Starters",
-    category: "Low-Code Platform",
-    tools: "Angular, Next.js, NestJS, MongoDB",
-    image: "/images/Solidx.png",
+    title: "AI Cloud Assistant",
+    category: "Serverless AI Application",
+    tools: "AWS Bedrock, API Gateway, Lambda, DynamoDB, Cognito",
+    image: "/images/ai-cloud.png",
+    github: "https://github.com/Hasham-03/AI-Chatbot",
+    demo: "https://main.d33idnq08aawk7.amplifyapp.com/",
   },
   {
-    title: "Radix",
-    category: "E-Commerce",
-    tools: "Angular, Next.js, NestJS, CMS",
-    image: "/images/radix.png",
+    title: "Serverless Image Processing API",
+    category: "Cloud Automation",
+    tools: "AWS Lambda, S3, Pillow, Python, Boto3",
+    image: "/images/image-resizer.jpeg",
+    github: "https://github.com/Hasham-03/aws-serverless-image-resizer",
   },
   {
-    title: "Bond Cancellation",
-    category: "Import-Export Automation",
-    tools: "Angular, Next.js, NestJS, Workflows",
-    image: "/images/bond.png",
+    title: "Automated Cloud Deployment",
+    category: "DevOps CI/CD Pipeline",
+    tools: "Docker, Terraform, GitHub Actions, AWS ECR, AWS Fargate",
+    image: "/images/cicd-pipeline.jpeg",
+    github: "https://github.com/Hasham-03/portfolio-fargate",
   },
   {
-    title: "Sapphire",
-    category: "CRM Platform",
-    tools: "AngularJS, NestJS, PostgreSQL",
-    image: "/images/sapphire.png",
+    title: "AI Resume Builder",
+    category: "AI Web Application",
+    tools: "Next.js, AWS EC2, Docker, n8n, Caddy",
+    image: "/images/resume-builder.jpeg",
+    github: "https://github.com/Hasham-03/resume-builder",
   },
   {
-    title: "Mpro",
-    category: "Insurance Platform",
-    tools: "React.js, Node.js, Microservices",
-    image: "/images/Maxlife.png",
+    title: "Cloud Portfolio Infrastructure",
+    category: "Cloud Hosting & CDN",
+    tools: "AWS CloudFront, Amplify, GitHub CI/CD",
+    image: "/images/portfolio.png",
   },
 ];
 
@@ -112,10 +126,40 @@ const Work = () => {
                           <span className="tools-label">Tools & Features</span>
                           <p>{project.tools}</p>
                         </div>
+                        {project.github ? (
+                          <div className="carousel-links">
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noreferrer"
+                              data-cursor="disable"
+                            >
+                              GitHub
+                            </a>
+                            {project.demo ? (
+                              <a
+                                href={project.demo}
+                                target="_blank"
+                                rel="noreferrer"
+                                data-cursor="disable"
+                              >
+                                Live demo
+                              </a>
+                            ) : null}
+                          </div>
+                        ) : null}
                       </div>
                     </div>
                     <div className="carousel-image-wrapper">
-                      <WorkImage image={project.image} alt={project.title} />
+                      <WorkImage
+                        image={project.image}
+                        alt={project.title}
+                        link={
+                          project.demo ||
+                          project.github ||
+                          undefined
+                        }
+                      />
                     </div>
                   </div>
                 </div>

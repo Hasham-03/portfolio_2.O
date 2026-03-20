@@ -1,0 +1,27 @@
+/* Quick Performance Tuning Tips for Future Updates
+
+1. TechStack to FloatingSkills Migration COMPLETE
+   - Removed heavy physics calculations from Three.js
+   - Replaced with lightweight CSS animations
+   - Reduced frame rate requirements
+
+2. Name Animation Features:
+   - Each letter floats in with staggered timing
+   - Continues to gently float after animation
+   - Auto-triggers on viewport intersection
+   - Disabled on reduced motion preference
+
+3. Skills Display:
+   - 16 hand-picked skills relevant to AI Infrastructure & Cloud
+   - Water-like floating in 2 alternating directions
+   - Hover effects with glow and scale
+   - Auto-pauses physics when off-screen
+
+4. Future Optimization Ideas:
+   - Replace heavy TechStack on mobile with FloatingSkills
+   - Add service worker for offline support
+   - Compress hero images (character model)
+   - Implement skeleton loading states
+   - Add preloading hints for 3D character model
+
+*/

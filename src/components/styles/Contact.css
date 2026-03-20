@@ -28,6 +28,14 @@
 .contact-box {
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.contact-box.animate-in {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .contact-flex p {
@@ -38,6 +46,19 @@
 a.contact-social {
   font-size: 25px;
   border-bottom: 1px solid #ccc;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+}
+
+a.contact-social:hover {
+  color: var(--accentColor);
+  border-bottom-color: var(--accentColor);
+  transform: translateX(5px);
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.6);
 }
 
 .contact-box h2 {
@@ -112,5 +133,115 @@ a.contact-social {
 
   .contact-container {
     width: calc(100% - 25px);
+  }
+}
+
+/* Mobile tablets */
+@media only screen and (max-width: 768px) {
+  .contact-section {
+    margin-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .contact-section h3 {
+    font-size: 32px;
+  }
+
+  .contact-box h2 {
+    font-size: 16px;
+  }
+
+  .contact-box h4 {
+    font-size: 14px;
+  }
+
+  a.contact-social {
+    font-size: 16px;
+  }
+
+  .contact-flex h4 {
+    margin-top: 15px;
+  }
+
+  .contact-flex p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 8px;
+  }
+}
+
+/* Mobile phones */
+@media only screen and (max-width: 600px) {
+  .contact-section {
+    margin-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .contact-section h3 {
+    font-size: 24px;
+  }
+
+  .contact-container {
+    width: calc(100% - 20px);
+  }
+
+  .contact-box {
+    gap: 12px;
+  }
+
+  .contact-box h2 {
+    font-size: 14px;
+    line-height: 14px;
+  }
+
+  .contact-box h4 {
+    font-size: 13px;
+    margin-top: 10px;
+  }
+
+  .contact-box h5 {
+    font-size: 12px;
+  }
+
+  a.contact-social {
+    font-size: 14px;
+    gap: 4px;
+  }
+
+  .contact-flex p {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .contact-flex h4 {
+    margin-top: 12px;
+  }
+}
+
+/* Small mobile phones */
+@media only screen and (max-width: 480px) {
+  .contact-section h3 {
+    font-size: 20px;
+  }
+
+  .contact-section {
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .contact-box h2 {
+    font-size: 13px;
+  }
+
+  .contact-box h4 {
+    font-size: 12px;
+  }
+
+  a.contact-social {
+    font-size: 13px;
+  }
+
+  .contact-flex p {
+    font-size: 12px;
   }
 }

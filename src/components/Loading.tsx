@@ -10,14 +10,20 @@ const Loading = ({ percent }: { percent: number }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [clicked, setClicked] = useState(false);
 
-  if (percent >= 100) {
-    setTimeout(() => {
+  useEffect(() => {
+    let revealTimer: ReturnType<typeof setTimeout> | undefined;
+    const completeTimer = setTimeout(() => {
       setLoaded(true);
-      setTimeout(() => {
+      revealTimer = setTimeout(() => {
         setIsLoaded(true);
-      }, 1000);
-    }, 600);
-  }
+      }, 300);
+    }, 1200);
+
+    return () => {
+      clearTimeout(completeTimer);
+      if (revealTimer) clearTimeout(revealTimer);
+    };
+  }, []);
 
   useEffect(() => {
     import("./utils/initialFX").then((module) => {
@@ -28,10 +34,10 @@ const Loading = ({ percent }: { percent: number }) => {
             module.initialFX();
           }
           setIsLoading(false);
-        }, 900);
+        }, 300);
       }
     });
-  }, [isLoaded]);
+  }, [isLoaded, setIsLoading]);
 
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
     const { currentTarget: target } = e;
@@ -46,7 +52,7 @@ const Loading = ({ percent }: { percent: number }) => {
     <>
       <div className="loading-header">
         <a href="/#" className="loader-title" data-cursor="disable">
-          RC
+          MH
         </a>
         <div className={`loaderGame ${clicked && "loader-out"}`}>
           <div className="loaderGame-container">
@@ -62,8 +68,8 @@ const Loading = ({ percent }: { percent: number }) => {
       <div className="loading-screen">
         <div className="loading-marquee">
           <Marquee>
-            <span> Full Stack Developer</span> <span>Software Engineer</span>
-            <span> Full Stack Developer</span> <span>Software Engineer</span>
+            <span> CLOUD ENGINEER</span> 
+            <span> AI INFRASTRUCTURE ENGINEER</span> <span>DEVOPS ENGINEER</span>
           </Marquee>
         </div>
         <div

@@ -6,52 +6,60 @@ const Career = () => {
       <div className="career-container">
         <h2>
           My career <span>&</span>
-          <br /> experience
+          <br /> journey
         </h2>
+
         <div className="career-info">
           <div className="career-timeline">
             <div className="career-dot"></div>
           </div>
+
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Ikshan</h5>
+                <h4>Electronics & Communication Engineering</h4>
+                <h5>Engineering Graduate</h5>
               </div>
-              <h3>2020</h3>
+              <h3> 2022  -  2026</h3>
             </div>
+
             <p>
-              Built 6+ complete applications using React.js. Integrated backend
-              authentication using Node.js & MongoDB. Created responsive UI/UX
-              and designed wireframes using Figma.
+              Studied Electronics & Communication Engineering while developing
+              strong interest in cloud computing, backend systems and modern
+              DevOps practices.
             </p>
           </div>
+
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Senior Full Stack Developer</h4>
-                <h5>Monocept (Max Life Insurance)</h5>
+                <h4>AI Agent Developer Intern</h4>
+                <h5>Rooman Technologies</h5>
               </div>
-              <h3>2021</h3>
+              <h3>2026</h3>
             </div>
+
             <p>
-              Led two development teams on Mpro, a large-scale insurance
-              operations platform. Developed multiple modules using React.js &
-              migrated critical functionalities to Node.js microservices.
+              Working on AI agent based systems and automation workflows.
+              Building intelligent applications using modern AI tools and cloud
+              services while exploring real-world AI integration and deployment.
             </p>
           </div>
+
           <div className="career-info-box">
             <div className="career-info-in">
               <div className="career-role">
-                <h4>Full Stack Developer</h4>
-                <h5>Logic Loop</h5>
+                <h4>AI Agents, Cloud & DevOps Engineer (Freelance)</h4>
+                <h5>AWS | Docker | Terraform | CI/CD</h5>
               </div>
-              <h3>NOW</h3>
+              <h3>Present</h3>
             </div>
+
             <p>
-              Building Solid, a proprietary low-code platform using Angular,
-              Next.js & NestJS. Delivering production-ready CMS-based projects
-              including e-commerce, CRM, and import-export automation systems.
+              Developed cloud-native projects including serverless AI
+              applications using AWS Bedrock, automated CI/CD pipelines with
+              GitHub Actions, containerized deployments using Docker and
+              scalable infrastructure using Terraform and AWS services.
             </p>
           </div>
         </div>

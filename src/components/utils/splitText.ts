@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
-import { SplitText } from "gsap-trial/SplitText";
+import { ScrollSmoother } from "gsap/ScrollSmoother";
+import { SplitText } from "gsap/SplitText";
 
 interface ParaElement extends HTMLElement {
   anim?: gsap.core.Animation;
@@ -9,6 +9,7 @@ interface ParaElement extends HTMLElement {
 }
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+let refreshListenerAdded = false;
 
 export default function setSplitText() {
   ScrollTrigger.config({ ignoreMobileResize: true });
@@ -31,8 +32,10 @@ export default function setSplitText() {
       linesClass: "split-line",
     });
 
+    if (!para.split) return;
+    const words = para.split.words;
     para.anim = gsap.fromTo(
-      para.split.words,
+      words,
       { autoAlpha: 0, y: 80 },
       {
         autoAlpha: 1,
@@ -57,8 +60,10 @@ export default function setSplitText() {
       type: "chars,lines",
       linesClass: "split-line",
     });
+    if (!title.split) return;
+    const chars = title.split.chars;
     title.anim = gsap.fromTo(
-      title.split.chars,
+      chars,
       { autoAlpha: 0, y: 80, rotate: 10 },
       {
         autoAlpha: 1,
@@ -75,6 +80,8 @@ export default function setSplitText() {
       }
     );
   });
-
-  ScrollTrigger.addEventListener("refresh", () => setSplitText());
+  if (!refreshListenerAdded) {
+    refreshListenerAdded = true;
+    ScrollTrigger.addEventListener("refresh", () => setSplitText());
+  }
 }

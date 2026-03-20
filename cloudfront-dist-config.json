@@ -1,0 +1,64 @@
+{
+    "Origins":  {
+                    "Quantity":  1,
+                    "Items":  [
+                                  {
+                                      "S3OriginConfig":  {
+                                                             "OriginAccessIdentity":  ""
+                                                         },
+                                      "Id":  "s3-my-animated-portfolio",
+                                      "DomainName":  "my-animated-portfolio.s3.ap-south-1.amazonaws.com"
+                                  }
+                              ]
+                },
+    "DefaultRootObject":  "index.html",
+    "DefaultCacheBehavior":  {
+                                 "ForwardedValues":  {
+                                                         "Cookies":  {
+                                                                         "Forward":  "none"
+                                                                     },
+                                                         "QueryString":  false
+                                                     },
+                                 "MinTTL":  0,
+                                 "MaxTTL":  31536000,
+                                 "Compress":  true,
+                                 "ViewerProtocolPolicy":  "redirect-to-https",
+                                 "TargetOriginId":  "s3-my-animated-portfolio",
+                                 "AllowedMethods":  {
+                                                        "Quantity":  2,
+                                                        "Items":  [
+                                                                      "GET",
+                                                                      "HEAD"
+                                                                  ],
+                                                        "CachedMethods":  {
+                                                                              "Quantity":  2,
+                                                                              "Items":  [
+                                                                                            "GET",
+                                                                                            "HEAD"
+                                                                                        ]
+                                                                          }
+                                                    },
+                                 "DefaultTTL":  86400
+                             },
+    "CallerReference":  "1773999315",
+    "Comment":  "my-animated-portfolio distribution",
+    "CustomErrorResponses":  {
+                                 "Quantity":  2,
+                                 "Items":  [
+                                               {
+                                                   "ResponsePagePath":  "/index.html",
+                                                   "ErrorCode":  403,
+                                                   "ErrorCachingMinTTL":  0,
+                                                   "ResponseCode":  "200"
+                                               },
+                                               {
+                                                   "ResponsePagePath":  "/index.html",
+                                                   "ErrorCode":  404,
+                                                   "ErrorCachingMinTTL":  0,
+                                                   "ResponseCode":  "200"
+                                               }
+                                           ]
+                             },
+    "Enabled":  true,
+    "PriceClass":  "PriceClass_100"
+}
